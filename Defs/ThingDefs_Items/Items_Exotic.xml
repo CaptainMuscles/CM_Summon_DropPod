@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  
+  <!--=============== Persona core ====================-->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Componentizer</defName>
+    <label>componentizer</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>If you use this, a component will soon find its way to you.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponSpecial/OrbitalTargeter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>2.0</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Use Componentizer</useLabel>
+      </li>
+      <li Class="CM_Summon_DropPod.CompProperties_UseEffectDropPod">
+        <compClass>CM_Summon_DropPod.CompUseEffect_DropPod</compClass>
+		<thingDef>ComponentIndustrial</thingDef>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+</Defs>
