@@ -15,8 +15,13 @@ namespace CM_Summon_DropPod
             IntVec3 dropSpot;
             Thing thing = ThingMaker.MakeThing(Props.thingDef);
 
-            if (thing != null && DropCellFinder.TryFindDropSpotNear(parent.PositionHeld, parent.MapHeld, out dropSpot, false, false, false))
-                TradeUtility.SpawnDropPod(dropSpot, parent.MapHeld, thing);
+            if (thing != null)
+            {
+                if (Props.amount > 0)
+                    thing.stackCount = Props.amount;
+                if (thing != null && DropCellFinder.TryFindDropSpotNear(parent.PositionHeld, parent.MapHeld, out dropSpot, false, false, false))
+                    TradeUtility.SpawnDropPod(dropSpot, parent.MapHeld, thing);
+            }
         }
     }
 }
